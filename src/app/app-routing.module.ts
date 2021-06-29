@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
 import { HomeComponent } from './core/home/home.component';
+import { LoginComponent } from './user/login/login.component';
 
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
@@ -17,9 +18,9 @@ import { VendorListComponent } from './vendor/vendor-list/vendor-list.component'
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'user/list', pathMatch: 'full' },
-  { path: '/home', component: HomeComponent },
-  { path: '/about', component: AboutComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
 
   { path: 'user/list', component: UserListComponent },
   { path: 'user/detail/:id', component: UserDetailComponent },
@@ -30,6 +31,8 @@ const routes: Routes = [
   { path: 'vendor/detail/:id', component: VendorDetailComponent },
   { path: 'vendor/create', component: VendorCreateComponent },
   { path: 'vendor/edit/:id', component: VendorEditComponent },
+
+  { path: 'login', component: LoginComponent },
 
   { path: '**', component: E404Component }
 ];
