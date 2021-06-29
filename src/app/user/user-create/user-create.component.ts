@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 })
 export class UserCreateComponent implements OnInit {
   user: User = new User();
-  users: User[] =[]
+ 
 
   constructor(
     private usersvc: UserService,

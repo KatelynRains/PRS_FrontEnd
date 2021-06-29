@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<div id = "component">
+    <div>
+        <a routerLink = "/product/create">Create</a>
+    </div>
+  <div>
+      <table class="table table=striped table-sm">
+          <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>PartNbr</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Unit</th>
+                  <th>Photopath</th>
+                  <th>Vendor</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor = "let p of products">
+                  <td>{{p.id}}</td>
+                  <td>{{p.partNbr}}</td>
+                  <td>{{p.name}}</td>
+                  <td>{{p.price}}</td>
+                  <td>{{p.unit}}</td>
+                  <td>{{p.photopath}}</td>
+                  <td>{{p.vendor?.name}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>  
+</div>

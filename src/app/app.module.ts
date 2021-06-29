@@ -20,6 +20,10 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { LoginComponent } from './user/login/login.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { LoginComponent } from './user/login/login.component';
     VendorDetailComponent,
     VendorEditComponent,
     VendorCreateComponent,
-    LoginComponent
+    LoginComponent,
+    ProductListComponent,
+    ProductCreateComponent,
+    ProductDetailComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,

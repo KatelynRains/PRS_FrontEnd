@@ -4,6 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './core/about/about.component';
 import { E404Component } from './core/e404/e404.component';
 import { HomeComponent } from './core/home/home.component';
+
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+
 import { LoginComponent } from './user/login/login.component';
 
 import { UserCreateComponent } from './user/user-create/user-create.component';
@@ -31,6 +37,11 @@ const routes: Routes = [
   { path: 'vendor/detail/:id', component: VendorDetailComponent },
   { path: 'vendor/create', component: VendorCreateComponent },
   { path: 'vendor/edit/:id', component: VendorEditComponent },
+
+  { path: 'product/list', component: ProductListComponent },
+  { path: 'product/detail/:id', component: ProductDetailComponent },
+  { path: 'product/create', component: ProductCreateComponent },
+  { path: 'product/edit/:id', component: ProductEditComponent },
 
   { path: 'login', component: LoginComponent },
 
