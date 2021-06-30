@@ -13,5 +13,5 @@ export class Request {
     userId: number = 0;
     user: User | null = null;
 
-    requestlines: Requestline[] | null = null;
+    requestLines: Requestline[] | null = null;
 }
