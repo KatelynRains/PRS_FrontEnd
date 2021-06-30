@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
  login():void{ 
     this.usersvc.login(this.username, this.password).subscribe(
         res => {console.log("Login Successful");
-        let user = new User();
-        this.syssvc.loggedInUser = user;
+        this.syssvc.loggedInUser = res;
         this.router.navigateByUrl("user/list");})
       
       this.message = "Login failed!"

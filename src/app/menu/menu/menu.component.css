@@ -1,5 +1,6 @@
-nav{
+div{
     background-color: #454545;
+    display: inline-block
 }
 
 ul{
@@ -10,7 +11,7 @@ ul{
 li{display: inline-block;
 }
 
-a{
+a, span{
     text-decoration:0;
     color: silver;
     padding: 0 10px;
@@ -20,4 +21,14 @@ a{
 a:hover{
     color: white;
     background-color: black;
+}
+
+#menu{
+    width:80%;
+}
+#user{
+    display: inline-block;
+    text-align: right;
+    width:20%;
+    color: silver;
 }

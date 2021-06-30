@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+<h3>Request Detail</h3>
+<table>
+    <tr>
+        <th>Id:</th>
+        <td>{{request.id}}</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>{{request.description}}</td>
+    </tr>
+    <tr>
+        <th>Justification</th>
+        <td>{{request.justification}}</td>
+    </tr>
+    <tr>
+        <th>RejectionReason</th>
+        <td>{{request.rejectionReason}}</td>
+    </tr>
+    <tr>
+        <th>DeliveryMode</th>
+        <td>{{request.deliveryMode}}</td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td>{{request.status}}</td>
+    </tr>
+    <tr>
+        <th>Total</th>
+        <td>{{request.total}}</td>
+    </tr>
+    <tr>
+        <th>User</th>
+        <td>{{request.user?.username}}</td>
+    </tr>
+</table>
+<button (click)="deleteReq()" class = "btn btn-danger">Delete Request</button> 

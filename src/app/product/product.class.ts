@@ -8,7 +8,7 @@ export class Product {
     unit: string = '';
     photopath: string = '';
     
-    vendorid: number = 0;
+    vendorId: number = 0;
     vendor: Vendor | null = null;
 }
 
