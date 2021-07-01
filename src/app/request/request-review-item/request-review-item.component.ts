@@ -12,7 +12,7 @@ import { RequestService } from '../request.service';
 })
 export class RequestReviewItemComponent implements OnInit {
   request: Request = new Request();
-  user: User = new User();
+  users: User = new User();
   id: number =0;
 
   constructor(
@@ -22,14 +22,7 @@ export class RequestReviewItemComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params.id;
-    this.reqsvc.get(this.id).subscribe(
-      res => {
-        console.debug("Request:",res);
-        this.request = res;
-      },
-      err => {console.error(err);}
-    );  
+    this.refresh();
   }
 
   approve():void{
@@ -42,14 +35,26 @@ export class RequestReviewItemComponent implements OnInit {
   reject(): void { 
     this.reqsvc.reject(this.request).subscribe(
     res => {console.debug("Reject:",res);
-            this.router.navigateByUrl("/request/list");},
+           this.refresh();},
     err => {console.error(err);}
     ); }
 
    addReason(): void{
      this.reqsvc.change(this.request).subscribe(
        res => {console.debug("reason added");
-              this.router.navigateByUrl("/request/list");},
+              this.refresh();},
        err => {console.error(err);}       
      ); } 
+
+     refresh(): void{
+      this.id = this.route.snapshot.params.id;
+      this.reqsvc.get(this.id).subscribe(
+        res => {
+          console.debug("Request:",res);
+          this.request = res;
+        },
+        err => {console.error(err);}
+      );  
+
+     }
 }

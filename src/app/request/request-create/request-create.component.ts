@@ -25,7 +25,8 @@ export class RequestCreateComponent implements OnInit {
   saveCreate(): void{
     this.request.userId =+ this.request.userId;
     this.reqsvc.create(this.request).subscribe(
-      res => {console.debug("create successful");},
+      res => {console.debug("create successful");
+      this.router.navigateByUrl("/request/list");},
       err => {console.error(err);}
     );    
   }

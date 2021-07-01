@@ -1,1 +1,23 @@
-<p>requestline-edit works!</p>
+<app-menu></app-menu>
+<h3>Requestline Edit</h3>
+<table>
+    <tr>
+        <th>Id:</th>
+        <td><input [(ngModel)]="requestline.id" type="number" disabled></td>
+    </tr>
+      <tr>
+        <th>Product</th>
+        <td>
+            <select [(ngModel)]="requestline.productId">
+                <option *ngFor="let p of products" value={{p.id}}>{{p.name}}</option>
+            </select>
+        </td>
+    </tr>  
+    <tr>
+        <th>Quantity</th>
+        <td><input [(ngModel)]="requestline.quantity" type="number"></td>
+    </tr>
+   
+</table>
+<button (click)="saveEdit()" class = "btn btn-primary">Save</button> 
+

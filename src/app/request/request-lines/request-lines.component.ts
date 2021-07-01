@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Request } from 'src/app/request/request.class'
 import { Requestline } from 'src/app/requestline/requestline.class';
+import { RequestlineService } from 'src/app/requestline/requestline.service';
 import { User } from 'src/app/user/user.class';
 import { RequestService } from '../request.service';
 
@@ -14,18 +15,16 @@ export class RequestLinesComponent implements OnInit {
   request: Request = new Request();
   user: User = new User();
   id: number = 0;
-
-
-  constructor(
+    constructor(
     private reqsvc: RequestService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private rqstlnsvc: RequestlineService,
   ) { }
 
   ngOnInit(): void {
     this.refresh();
   }
-
   review(): void {
     this.reqsvc.review(this.request).subscribe(
       res => {
@@ -43,8 +42,17 @@ export class RequestLinesComponent implements OnInit {
         this.request = res;
       },
       err => { console.error(err); }
-    );
+    );}
 
+    delete(requestLine: Requestline): void {
+    console.log(this.request.requestLines);
+    this.rqstlnsvc.remove(requestLine).subscribe(
+      res => {console.debug("delete successful"),
+          this.refresh();},
+      err => {console.error(err);}
+    );    
 
-  }
+    }
+
 }
+

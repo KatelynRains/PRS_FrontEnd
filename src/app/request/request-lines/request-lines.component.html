@@ -51,7 +51,7 @@
                 </span>
                 <span>  |  </span>
                 <span>
-                    <a routerLink = "/requestline/detail/{{line.id}}">Delete</a>
+                    <button (click)="delete(line)" class = "btn btn-link danger">Delete</button>
                 </span>
               </td>
           </tr>
