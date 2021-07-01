@@ -13,8 +13,8 @@ import { RequestService } from '../request.service';
 export class RequestLinesComponent implements OnInit {
   request: Request = new Request();
   user: User = new User();
-  id: number =0;
-  
+  id: number = 0;
+
 
   constructor(
     private reqsvc: RequestService,
@@ -23,19 +23,28 @@ export class RequestLinesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+  review(): void {
+    this.reqsvc.review(this.request).subscribe(
+      res => {
+        console.debug("Review:", res);
+        this.refresh();
+        },
+      err => { console.error(err); }
+    );
+  }
+  refresh(): void {
     this.id = this.route.snapshot.params.id;
     this.reqsvc.get(this.id).subscribe(
       res => {
-        console.debug("Request:",res);
+        console.debug("Request:", res);
         this.request = res;
       },
-      err => {console.error(err);}
-    );  }
+      err => { console.error(err); }
+    );
 
-  review(): void{
-     this.reqsvc.review(this.request).subscribe(
-      res => {console.debug("Review:",res);
-              this.router.navigateByUrl("/request/list");},
-      err => {console.error(err);}
-      ); }
+
+  }
 }

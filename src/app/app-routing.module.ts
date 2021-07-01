@@ -18,6 +18,7 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 
 import { LoginComponent } from './user/login/login.component';
 
@@ -60,8 +61,8 @@ const routes: Routes = [
   { path: 'request/review', component: RequestReviewListComponent },
   { path: 'request/reviewitem/:id', component: RequestReviewItemComponent },
 
-  { path: 'requestline/create', component: RequestlineCreateComponent },
-
+  { path: 'requestline/create/:rid', component: RequestlineCreateComponent },
+  { path: 'requestline/edit/:id', component: RequestlineEditComponent },
 
   { path: 'login', component: LoginComponent },
 

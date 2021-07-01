@@ -10,6 +10,7 @@
                   <th>Id</th>
                   <th>Description</th>
                   <th>Status</th>
+                  <th>Rejection Reason</th>
                   <th>Total</th>
                   <th>User</th>
                 </tr>
@@ -19,14 +20,13 @@
                   <td>{{request.id}}</td>
                   <td>{{request.description}}</td>
                   <td>{{request.status}}</td>
+                  <td>{{request.rejectionReason}}</td>
                   <td>{{request.total | currency}}</td>
                   <td>{{request.user?.username}}</td>
               </tr>
           </tbody>
       </table>
-      <button (click)="approve()" class = "btn btn-primary">Approve</button>
-      <span> | </span>
-      <button (click)="reject()" class = "btn btn-primary">Reject</button>  
+     
   </div>  
   <hr>
   <table class="table table=striped table-sm">
@@ -50,6 +50,14 @@
         </tr>
       </tbody>
   </table>
+  <button (click)="approve()" class = "btn btn-primary">Approve</button>
+  <span> | </span>
+  <button (click)="reject()" class = "btn btn-primary">Reject</button>  
+  <span> | </span>
+  <input [(ngModel)]="request.rejectionReason" type="text" placeholder="Rejection Reason">
+  <span> </span>
+  <button (click)="addReason()" class = "btn btn-link">confirm reject</button>
+ 
 </div>
 
 

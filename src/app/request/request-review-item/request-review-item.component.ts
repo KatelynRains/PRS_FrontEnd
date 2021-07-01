@@ -45,4 +45,11 @@ export class RequestReviewItemComponent implements OnInit {
             this.router.navigateByUrl("/request/list");},
     err => {console.error(err);}
     ); }
+
+   addReason(): void{
+     this.reqsvc.change(this.request).subscribe(
+       res => {console.debug("reason added");
+              this.router.navigateByUrl("/request/list");},
+       err => {console.error(err);}       
+     ); } 
 }
