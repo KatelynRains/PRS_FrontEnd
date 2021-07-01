@@ -24,7 +24,9 @@
               </tr>
           </tbody>
       </table>
-      <button (click)="review()" class = "btn btn-primary">Review</button> 
+      <button (click)="approve()" class = "btn btn-primary">Approve</button>
+      <span> | </span>
+      <button (click)="reject()" class = "btn btn-primary">Reject</button>  
   </div>  
   <hr>
   <table class="table table=striped table-sm">
@@ -35,7 +37,7 @@
             <th>Quantity</th>    
             <th>Price</th>
             <th>LineTotal</th>
-            <th>Actions</th>
+           
         </tr>
       </thead>
       <tbody>
@@ -45,17 +47,9 @@
               <td>{{line.quantity}}</td>
               <td>{{line.product?.price|currency}}</td>
               <td>{{(+line.quantity * +line.product.price|currency)}}</td>
-              <td>
-                <span>
-                    <a routerLink = "/requestline/edit/{{line.id}}">Edit</a>
-                </span>
-                <span>  |  </span>
-                <span>
-                    <a routerLink = "/requestline/detail/{{line.id}}">Delete</a>
-                </span>
-              </td>
-          </tr>
+        </tr>
       </tbody>
   </table>
 </div>
+
 
