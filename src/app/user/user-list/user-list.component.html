@@ -7,20 +7,20 @@
     <table class="table table-striped table-sm">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Firstname</th>
-                <th>Lastmame</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>IsReviewer</th>
-                <th>IsAdmin</th>
+                <th><button (click)="sortFn('id')" class = "btn btn-link">Id</button></th>
+                <th><button (click)="sortFn('username')" class = "btn btn-link">Username</button></th>
+                <th><button (click)="sortFn('password')" class = "btn btn-link">Password</button></th>
+                <th><button (click)="sortFn('firstname')" class = "btn btn-link">Firstname</button></th>
+                <th><button (click)="sortFn('lastname')" class = "btn btn-link">Lastname</button></th>
+                <th><button (click)="sortFn('phone')" class = "btn btn-link">Phone</button></th>
+                <th><button (click)="sortFn('email')" class = "btn btn-link">Email</button></th>
+                <th><button (click)="sortFn('isReviewer')" class = "btn btn-link">IsReviewer</button></th>
+                <th><button (click)="sortFn('isAdmin')" class = "btn btn-link">IsAdmin</button></th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor = "let u of users">
+            <tr *ngFor = "let u of users | sort:sortColumn:sortAsc">
                 <td>{{u.id}}</td>
                 <td>{{u.username}}</td>
                 <td>{{u.password}}</td>

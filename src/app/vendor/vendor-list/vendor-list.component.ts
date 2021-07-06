@@ -8,6 +8,17 @@ import { VendorService } from '../vendor.service';
   styleUrls: ['./vendor-list.component.css']
 })
 export class VendorListComponent implements OnInit {
+
+
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
+  sortFn(column: string):void{
+  if(column === this.sortColumn){
+    this.sortAsc =! this.sortAsc;
+    return;}
+    this.sortColumn = column;
+    this.sortAsc = true;
+  }
   vendors: Vendor[] = [];
 
   constructor(

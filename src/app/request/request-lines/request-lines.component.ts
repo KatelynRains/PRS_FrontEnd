@@ -12,6 +12,15 @@ import { RequestService } from '../request.service';
   styleUrls: ['./request-lines.component.css']
 })
 export class RequestLinesComponent implements OnInit {
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
+  sortFn(column: string):void{
+  if(column === this.sortColumn){
+    this.sortAsc =! this.sortAsc;
+    return;}
+    this.sortColumn = column;
+    this.sortAsc = true;
+  }
   request: Request = new Request();
   user: User = new User();
   id: number = 0;

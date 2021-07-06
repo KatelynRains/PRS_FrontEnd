@@ -33,6 +33,7 @@ import { RequestlineCreateComponent } from './requestline/requestline-create/req
 import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { SortPipe } from './core/sort.pipe';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { RequestlineEditComponent } from './requestline/requestline-edit/request
     RequestlineCreateComponent,
     RequestReviewItemComponent,
     RequestReviewListComponent,
-    RequestlineEditComponent
+    RequestlineEditComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,16 @@ import { UserService } from '../user.service';
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
+  sortFn(column: string):void{
+  if(column === this.sortColumn){
+    this.sortAsc =! this.sortAsc;
+    return;}
+    this.sortColumn = column;
+    this.sortAsc = true;
+  }
+
   
   constructor(
     private usersvc: UserService

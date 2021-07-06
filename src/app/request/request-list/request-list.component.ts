@@ -9,6 +9,17 @@ import { RequestService } from '../request.service';
   styleUrls: ['./request-list.component.css']
 })
 export class RequestListComponent implements OnInit {
+ 
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
+  sortFn(column: string):void{
+  if(column === this.sortColumn){
+    this.sortAsc =! this.sortAsc;
+    return;}
+    this.sortColumn = column;
+    this.sortAsc = true;
+  }
+
   requests: Request [] =[];
   users: User [] = [];
 
