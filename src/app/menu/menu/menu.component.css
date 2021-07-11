@@ -1,34 +1,33 @@
-div{
+nav{
     background-color: #454545;
-    display: inline-block
-}
+    width:80%;
+    display:inline-block;}
 
-ul{
+ul, span{
+    display: inline;
     margin:0;
     padding: 0 ;
-}
+    color:silver;}
 
-li{display: inline-block;
-}
+div{   
+    display:inline-block;
+    width:20%;
+    background-color: #454545;
+    text-align: right;}
 
-a, span{
+span{
+    margin:20px;
+    color:silver;}
+       
+a, li{
+    display: inline;
     text-decoration:0;
-    color: silver;
     padding: 0 10px;
     margin: 10 px;
-}
+    color: silver;}
 
 a:hover{
     color: white;
-    background-color: black;
-}
+    background-color: black;}
 
-#menu{
-    width:80%;
-}
-#user{
-    display: inline-block;
-    text-align: right;
-    width:20%;
-    color: silver;
-}
+

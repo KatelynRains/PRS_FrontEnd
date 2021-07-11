@@ -7,6 +7,8 @@ export class SortPipe implements PipeTransform {
 
   transform(items: any[], column: string = "id", isAsc: boolean = true): any[] {
     let sortFn = (a: any, b: any): number => {
+      if(a[column]==null)
+      {a[column]=""}
       let x = (typeof a[column] === "number") ? a[column] : a[column].toString().toLowerCase();
       let y = (typeof b[column] === "number") ? b[column] : b[column].toString().toLowerCase();
       let sortResult = 0;

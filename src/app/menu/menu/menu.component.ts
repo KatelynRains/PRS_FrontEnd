@@ -12,7 +12,7 @@ export class MenuComponent implements OnInit {
   username = this.syssvc.loggedInUser == null ? "?" : this.syssvc.loggedInUser.username;
 
   menus: Menu[] = [
-    new Menu("Home", "home"),
+    new Menu("Home", "/home"),
     new Menu("Users", "/user/list"),
     new Menu("Vendors", "/vendor/list"),
     new Menu("Products", "/product/list"),

@@ -1,12 +1,14 @@
-<div>
-<nav id:menu>
+
+<nav>
     <ul>
         <li *ngFor="let m of menus">
             <a routerLink="{{m.route}}">{{m.display}}</a>
         </li>
     </ul>
 </nav>
-</div>
+
 <div>
-    <span id:user>{{username}}</span>
+    
+    <span>{{username}}</span>
+    
 </div>
